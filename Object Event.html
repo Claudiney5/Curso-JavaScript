@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso JS - DOM 0</title>
+    <meta charset="utf-8">
+    <!-- Tema opcional -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+	<div class="container">
+		<h1>Curso de JavaScript - Object Event</h1>
+		<button id="btn1" onclick='clicou()'>Botão 1</button>
+		<button id="btn3">Botão 3</button>
+
+    </div>
+    
+    <div class="container">
+        <h1>Objeto Evento</h1>
+        <div id="d1" style="background: red; padding: 25px;">texto dentro da div propagation
+            <span style="background: orange; padding: 10px;">span né?</span>
+        </div>
+    </div>
+
+    <!---------------SCRIPT JS -------------------------------------------->
+
+    <script type="text/javascript">
+        //  atrelando eventos a elementos html
+	    var btn2 = document.getElementById('btn2');
+		var btn3 = document.getElementById('btn3');
+	    
+		btn1.onclick = clicou;
+		function clicou(){
+			alert('Botão clicado!');
+		}
+
+		btn3.addEventListener("click", () => {
+			alert('Clicou com DOM level 2');
+		})
+        // conseguimos atrelar dois ou mais eventos ao mesmo elemento.
+		
+        //  Propagação de eventos do mais interno para o externo. possível fazer ao contrario com 'true' como 3º parâmetro.
+        var $d1 = document.querySelector("#d1");
+        var $d1Span = document.querySelector("#d1 span");
+
+        $d1.addEventListener("click", () => {
+            console.log("Clcick em $d1");
+        });
+
+        $d1Span.addEventListener("click", (e) => {
+            console.log("Click em $d1Span!!");
+            e.stopPropagation();  //  interrupção de propagação.
+        });
+
+        document.addEventListener("click", (evento) => {
+            console.log("Click no document");
+            console.log(evento.currentTarget);
+            console.log(this);
+            console.log(evento.target);
+
+        })
+
+	</script>
+
+
+
+</body>
+</html>
+
+

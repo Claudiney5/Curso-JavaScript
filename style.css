@@ -1,0 +1,23 @@
+* {
+    font: "Roboto", "Arial", sans-serif;
+    background-color: #f0f0f5;
+}
+
+label,
+input {
+    margin-top: 5px;;
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    height: 24px;
+}
+
+button {
+    margin-top: 20px;
+    background-color: dodgerblue;
+    color: floralwhite;
+    border: none;
+    border-radius: 6px;
+    height: 32px;
+    width: 100px;
+}

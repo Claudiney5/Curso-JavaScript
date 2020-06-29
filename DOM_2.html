@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso JS - DOM 0</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<div class="conteiner">
+		<h1>Curso de JavaScript - DOM 0</h1>
+		<button id="btn1" onclick='clicou()'>Botão 1</button>
+		<button id="btn2">Botão 2</button>
+		<button id="btn3">Botão 3</button>
+
+	</div>
+
+	<script type="text/javascript">
+	    var btn2 = document.getElementById('btn2');
+		var btn3 = document.getElementById('btn3');
+	    
+		btn2.onclick = clicou;
+		function clicou(){
+			alert('Botão clicado!');
+		}
+
+		btn3.addEventListener("click", () => {
+			alert('Clicou com DOM level 2');
+		})
+        // consiguimnos atrelar dois ou mais eventos ao mesmo elemento.
+		
+	</script>
+
+
+
+</body>
+</html>
+
+

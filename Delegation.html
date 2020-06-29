@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Java Script</title>
+    <meta charset="utf-8">
+    <!-- Tema opcional -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<!-- <link rel="stylesheet" href="./style.css"> -->
+</head>
+
+<body>
+	    
+    <div class="container">
+        <h1>Delegação de eventos</h1>
+        <div id="d1" style="background: red; padding: 25px;">Delegação: currentTarget, this e target
+            <span style="background: orange; padding: 10px; margin-left: 20px;">ATENÇÃO!</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <ul class="list_content">
+            <li class="list_items">UM</li>
+            <li class="list_items">DOIS</li>
+            <li class="list_items">TRÊS</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <ul class="list_content2">
+            <li class="list_items2">UM.2</li>
+            <li class="list_items2">DOIS.2</li>
+            <li class="list_items2">TRÊS.2</li>
+        </ul>
+    </div>
+
+    <!---------------SCRIPT JS -------------------------------------------->
+
+    <script type="text/javascript">
+        
+        
+        // primeiro modo
+        var $lis = document.querySelectorAll(".list_items");
+        var i = 0;
+        while ($lis[i]){
+            $lis[i].addEventListener("click", e => {
+                e.stopPropagation();
+                console.log("Clicou em uma li")
+            })
+            i++;
+        }
+
+        //Outra maneira de fazer
+        var $ul2 = document.querySelector(".list_content2");
+        $ul2.addEventListener('click', e => {
+            e.stopPropagation();
+            console.log(this);
+            console.log(e.currentTarget);
+            console.log(e.target);
+
+            console.log(e.target.nodeName);
+        })
+        
+    </script>
+
+</body>
+</html>
+
+

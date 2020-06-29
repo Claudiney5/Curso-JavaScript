@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Validação de formulário Simples</h1>
+
+        <form action="#" method="POST">
+            <label for="txtUser">Usuário</label>
+            <input type="text" id="txtUser" name="user" autocomplete="username">
+            <label for="txtPass">Senha</label>
+            <input type="password" id="txtPass" name="pass" autocomplete="current-password">
+            <button type="submit" id='btn'>Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        (function(){
+            'use strict';
+            var $form = document.querySelector('form')
+            var $txtUser = document.getElementById('txtUser');
+            var $txtPass = document.getElementById('txtPass');
+            var $btn = document.getElementById('btn');
+
+            $form.addEventListener('submit', event => {
+                if (!$txtUser.value){
+                    alert('Usuário tem que ser preenchido!');
+                } else if (!$txtPass.value){
+                    alert('Senha não preenchida!!');
+                } else {
+                    alert('Login OK');
+                }         
+                event.preventDefault();   
+            });
+        })();
+    </script>
+</body>
+</html>
