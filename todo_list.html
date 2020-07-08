@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Java Script</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>TO DO list</h1>
+
+        <input type="text" name="" id="txtTask">
+        <button id="btn">Cadastrar tarefa</button>
+
+        <ul>
+            <li>Estudar Java Script</li>
+            <li>Estudar Sublime</li>
+            <li>Trabalhar no Akompanhe.me</li>
+
+        </ul>       
+
+    </div>
+
+    <!-- ---------------------------------------------------- -->
+
+    <script>
+        (function(){
+            'use strict';
+
+            var $ul = document.querySelector('ul');
+            var $txtTask = document.querySelector('#txtTask');
+            var $btn = document.querySelector('#btn');
+        
+            $btn.addEventListener('click', function() {
+                var task = '<li>' + $txtTask.value + '</li>';
+                
+                $ul.innerHTML = $ul.innerHTML + task;
+                $txtTask.value = '';
+                $txtTask.focus();
+            });
+        })()
+
+    </script>
+
+
+</body>
+</html>

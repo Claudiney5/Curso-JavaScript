@@ -9,45 +9,41 @@
 
 <body>
     <div class="container">
-        <h1>Controle de tamanho de Text Area</h1>
+        <h1>Controle de tamanho de Text. Area</h1>
 
-        <textarea name="texto" id="msg" cols="80" rows="20"></textarea>
-        <p>Restam <span id="resta"></span> caracteres</p>
+        <textarea name="texto" id="msg" cols="80" rows="20" maxlength="50"></textarea>
+        <div id="restaContainer" style="display:none;">
+            <p>Restam <span id="resta"></span> caracteres</p>
+        </div>
     </div>
 
     <script>
 
         (function(){
             'use strict';
-            var max = 200;
-
+            
             var $txtMsg = document.getElementById('msg');
+            var $restaContainer = document.getElementById('restaContainer')
             var $resta = document.getElementById('resta');
+            var max = $txtMsg.maxLength;
 
-            // $txtMsg.addEventListener('keypress', keypress);
-            // $txtMsg.addEventListener('keyup', keyup);
-            // $txtMsg.addEventListener('keydown', keydown);
+            function mostrarContainerResta() {
+                $restaContainer.style.display = 'block';
+            }
 
-            $resta.textContent = max;
-            $txtMsg.addEventListener('input', checkLeght)
+            mostrarContainerResta();
+            showCaracterLength(max);
+            $txtMsg.addEventListener('input', checkLength)
 
-            // function keypress(e){
-            //     console.log('keypress: ', this.value);
-            // }
-
-            // function keyup(e){
-            //     console.log('keyup: ', this.value);
-            // }
-
-            // function keydown(e){
-            //     console.log('keydown: ', this.value);
-            // }
-
-            function checkLeght(e){
-                console.log('Evento input: ', this.value);
+            function checkLength(e){
                 var digitedChars = this.value.length;
-                $resta.textContent = max - digitedChars;
+                var caracteresRestantes = parseInt(max) - parseInt(digitedChars);
+                showCaracterLength(caracteresRestantes);
             }  //  preferível de ser usado devido a colagem de texto.
+
+            function showCaracterLength (n) {
+                $resta.textContent = n;
+            }
 
         })()
 

@@ -2,7 +2,7 @@
     font: "Roboto", "Arial", sans-serif;
     background-color: #f0f0f5;
 }
-
+/* 
 label,
 input {
     margin-top: 5px;;
@@ -10,9 +10,9 @@ input {
     flex-direction: column;
     border-radius: 6px;
     height: 24px;
-}
+} */
 
-button {
+/* button {
     margin-top: 20px;
     background-color: dodgerblue;
     color: floralwhite;
@@ -20,4 +20,4 @@ button {
     border-radius: 6px;
     height: 32px;
     width: 100px;
-}
+} */
