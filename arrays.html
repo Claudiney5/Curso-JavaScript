@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1> 
+        <h2>Métodos e Propriedades do Objeto ARRAY</h2>
+        <p>arr = new Array(1, 2, 3, 4, 5, 6)</p>
+        <p>arr.lenght</p>
+        
+
+        <script>                    
+        
+            var arr = ['1kl', 2, 3, 4, 5, 6, 'asafg', 2, '30']
+            
+            var soNumeros = arr.every( function (elemento, indice, objeto){
+                console.log('Elemento: ', elemento)
+                console.log('Índice: ', indice)
+                console.log('Objeto:', objeto)
+                return true
+            })
+
+            var sohNumeros = arr.every( function (elemento){
+                return typeof elemento === 'number'
+            })
+            console.log(sohNumeros)
+
+            var aoMenosUmNumero = arr.some( function (elemento){
+                return typeof elemento === 'number'
+            })
+            console.log(aoMenosUmNumero)
+
+            var filtro = arr.filter( function (elemento, indice, arr){
+                return typeof elemento === 'number'
+            })
+            console.log('Array filtrada: ', filtro)
+
+            arr.forEach(function(elemento, indice, vetor){
+                console.log('Elemento:', elemento, 'Indice:', indice, 'Indice - ',arr.toString())
+                elemento = elemento * 2
+                console.log(elemento)
+            })
+
+            var indiceElemento = arr.indexOf('asafg', 3)
+            console.log('Posição:', indiceElemento)
+
+            var indiceUltimoElemento = arr.lastIndexOf(2)
+            console.log('Última Posição:', indiceUltimoElemento)
+
+            console.log('Filtro:', filtro)
+            filtro2 = filtro.map(function(elemento, indice, vetor){
+                return elemento * indice
+            })
+            console.log('Filtro 2:', filtro2)
+
+            var filtrados = filtro.concat(filtro2, 100)
+            console.log('Concatenados:', filtrados)
+            
+            console.log(filtrados.length)
+
+            var strSeparados = filtrados.join(' - ')
+            console.log('String com separador:', strSeparados)
+
+            arr.push('item', 'novo utem')
+            console.log('Novo vetor:', arr)
+
+            var ultimoItem = arr.pop()
+            console.log(ultimoItem)
+            console.log('Vetor:', arr)
+
+            var primeiroItem = arr.shift()
+            console.log(primeiroItem)
+            console.log('Vetor:', arr)
+
+            var primeiroItem = arr.unshift('true', 'unshift')
+            console.log(primeiroItem)
+            console.log('Vetor:', arr)
+
+            var somaDaArray = filtro.reduce(function(anterior, atual){
+                return anterior + atual
+            }, 1000)
+            console.log(filtro)
+            console.log(somaDaArray)
+
+            var testeReduce = ['Vasco ', 'da ', 'Gama '].reduce(function(i, a){
+                return i + a
+            })
+            console.log('Reduce: ', testeReduce)
+
+            var testeReduceRight = ['Vasco ', 'da ', 'Gama '].reduceRight(function(i, a){
+                return i + a
+            })
+            console.log('ReduceRight: ', testeReduceRight)
+
+            console.log('Vetor:', arr)
+            console.log('Vetor invertido:', arr.reverse())
+            console.log('Destrutivo?', arr)
+
+            filtrados2 = filtrados.slice(2, 6)
+            console.log(filtrados2)
+
+            var excluidos = filtrados.splice(2, 0, 'limão', 101)
+            console.log('filtrados:', filtrados)
+            console.log('excluídos:', excluidos)
+            var excluidos = filtrados.splice(2, 4, 'união', 102)
+            console.log('filtrados:', filtrados)
+            console.log('excluídos:', excluidos)
+
+        </script>
+        
+    </body>
+</html>

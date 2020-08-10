@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Methods</title>
+    <script>
+        (function(){
+            window.addEventListener('load', init)
+
+            function init(){
+                var $paragrafos = document.querySelectorAll('p')
+
+                var x = 0
+                while($paragrafos[x]){
+                    $paragrafos[x].innerHTML = formatarTexto($paragrafos[x].innerHTML)
+                    x++
+                }
+            }
+
+            function formatarTexto(texto) {
+                var maxCaracteres = 200
+                if(texto.length <= maxCaracteres) return texto
+
+                var subtexto = texto.slice(0, maxCaracteres)
+                return subtexto + '...'
+            }
+            
+        })()
+    </script>
+    
+</head>
+<body>
+    <h1>Curso de Java Script</h1>
+    <h2>Métodos de Strings</h2>
+    <p>
+        Mussum Ipsum, cacilds vidis litro abertis. Suco 
+        de cevadiss deixa as pessoas mais interessantis. 
+        Si num tem leite então bota uma <strong> pinga</strong> aí cumpadi! 
+        Nullam volutpat risus nec leo commodo, 
+        ut interdum diam laoreet. Sed non consequat 
+        odio. Paisis, filhis, espiritis santis.
+    </p>
+    <p>Sapien in monti palavris qui num significa 
+        nadis i pareci latim.  Posuere libero varius. 
+        Nullam a nisl ut ante blandit hendrerit. Aenean 
+        sit amet nisi. Suco de cevadiss deixa as pessoas 
+        mais interessantis. Si num tem leite então bota 
+        uma pinga aí cumpadi!</p>
+    <p>Casamentiss faiz malandris se pirulitá. Diuretics 
+        paradis num copo é motivis de denguis.</p>
+
+</body>
+<script>
+    
+</script>
+</html>
