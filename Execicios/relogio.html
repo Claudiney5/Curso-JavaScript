@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        
+    </style>
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1>Temporizadores - Exercício 2</h1>
+    <div class="rel">
+        <h2>Relógio</h2>
+        <p>Akompanhe.me informa a hora certa. São exatamente:</p>
+        <p class="relogio"></p>      
+    </div>
+
+    <script>
+
+        (function(){
+
+            var $relogio = document.querySelector('.relogio')
+
+            function getHour (){
+
+                var data = new Date()
+
+                var horas = formata(data.getHours())
+                var minutos = formata(data.getMinutes())
+                var segundos = formata(data.getSeconds())
+
+                return horas + ':' + minutos + ":" + segundos
+            
+            }
+
+            function formata(tempo) {
+                return tempo < 10 ? "0" + tempo : tempo
+            }
+
+            function mostraRelogio(atual){
+                $relogio.textContent = atual
+            }
+
+
+            setInterval(function(){
+                mostraRelogio(getHour())
+            }, 1000)
+
+        })()
+
+    </script>
+</body>
+</html>

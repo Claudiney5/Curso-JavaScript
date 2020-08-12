@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1>Temporizadores</h1>
+
+    <script>
+
+        var n = 0
+
+        function somaUm(){
+            console.log('n', n++)
+
+            if (n > 5){
+                clearInterval(2)
+            }
+        }
+
+        var temporizador = setTimeout(somaUm, 1500)
+
+        var intervalo = setInterval(somaUm,1000)
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+            display: none;
+        }
+
+        .banner__close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <h1>Temporizadores - Exercício 1</h1>
+    <div class="banner">
+        <h2>Banner Irritante</h2>
+        <button class="banner__close">X</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada rhoncus vestibulum. Sed vitae sem varius, cursus tortor eget, molestie sem. Nulla vulputate at diam a pellentesque. Sed consectetur metus sit amet iaculis feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut massa lorem, varius in orci vitae, tempor semper magna. </p>
+        <p>Nunc scelerisque nisi vitae dapibus porttitor. Donec quis ex varius, pharetra nisi nec, euismod dui. Suspendisse porttitor enim vel malesuada condimentum. In gravida rutrum urna in varius. Nulla accumsan libero ut pulvinar molestie. Mauris auctor vel ligula at euismod. Proin non malesuada justo, eu pulvinar lectus. Ut scelerisque dictum magna, vitae vehicula orci vestibulum vel. </p>
+        <p>Sed fermentum, magna blandit ultricies dictum, felis metus mattis felis, at tempus mi purus vel tellus. Vivamus purus mauris, sagittis eu mollis nec, posuere quis magna. Morbi lacinia metus lectus, ut hendrerit tortor lobortis sit amet. Donec ac erat molestie, facilisis tellus vel, dictum elit. Donec nisl lectus, mattis sit amet tortor vel, porttitor mollis sem. </p>
+
+    </div>
+
+    <script>
+        (function(){
+            
+            var $banner = document.querySelector('.banner')
+            var $bannerBtn = document.querySelector('.banner__close')
+
+            $bannerBtn.addEventListener('click', escondeBanner)
+
+            var intervaloEsconde = null
+
+            function mostraBanner(){
+                $banner.style.display =  'block'
+                intervaloEsconde = setTimeout(escondeBanner, 4000)
+            }
+
+            function escondeBanner(){
+                // remover o addEventListener para economizar memória
+                $bannerBtn.removeEventListener('click', escondeBanner)
+                //removendoo elemento (poderíamos apenasfazerdisplay= none). Para isso
+                // temos que acessar o elemento PAI
+                $banner.parentNode.removeChild($banner)
+
+                clearTimeout(intervaloEsconde)
+            }
+
+            setTimeout(mostraBanner, 2000)
+            
+
+        })()
+    </script>
+</body>
+</html>

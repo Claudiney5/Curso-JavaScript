@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings Methods</title>
+
+    
+</head>
+<body>
+    <h1>Curso de Java Script</h1>
+    <h2>Métodos de Arrays</h2>
+    <p>Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss deixa as pessoas mais interessantis. Si num tem leite então bota uma <strong> pinga</strong> aí cumpadi! 
+        Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Paisis, filhis, espiritis santis.</p>
+    <p>Sapien in monti palavris qui num significa nadis i pareci latim.  Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean sit amet nisi. Suco de cevadiss deixa as pessoas 
+        mais interessantis. Si num tem leite então bota uma pinga aí cumpadi!</p>
+    <p>Casamentiss faiz malandris se pirulitá. Diuretics paradis num copo é motivis de denguis.</p>
+
+    <p>Sapien in monti palavris qui num significa nadis i pareci latim.  Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean 
+        sit amet nisi. Suco de cevadiss deixa as pessoas mais interessantis. Si num tem leite então bota uma pinga aí cumpadi!</p>
+    <p>Sapien in monti palavris qui num significa nadis i pareci latim. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit. Aenean 
+        sit amet nisi. Suco de cevadiss deixa as pessoas mais interessantis. Si num tem leite então bota uma pinga aí cumpadi!</p>
+
+        <script>
+            
+            var $paragrafos = document.querySelectorAll('p')
+    
+            var x = 0
+            while($paragrafos[x]){
+                $paragrafos[x].innerHTML = formatarParagrafo($paragrafos[x].innerHTML)
+                x++
+            }
+    
+            function formatarParagrafo(texto) {
+                var arr = texto.split(' ')
+
+                console.log(arr)
+                if(arr.length > 10){
+                    return arr.slice(0, 10).join(' ') + '...'
+                }
+                return texto
+            }
+
+            
+
+        </script>
+
+</body>
+
+
+
+</html>
