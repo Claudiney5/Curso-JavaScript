@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+
+    <script>
+
+        var objeto = {   // criação literal de um objeto
+            value: 1,
+            add: function(n){
+                this.value += n
+                return this  // prepara para retornar o próprio objeto e permite encadeamento
+            },
+            log: function(){
+                console.log(this.value)
+                return this
+            }
+        }
+
+        console.log(objeto.add(5).add(2).log().add(10).log())
+
+        function Add(valor_inicial){  // usando construtor (Add com letra maiúscula)
+            this.value = valor_inicial || 0
+            this.add = function(n){
+                this.value += return this
+            }
+            this.log = function(){
+                console.log(this.value)
+                return this
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+    <h1>Funções - Encadeamento de Métodos</h1>
+
+    <p></p>
+    
+</body>
+</html>

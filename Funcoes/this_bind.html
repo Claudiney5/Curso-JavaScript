@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+    <script>
+
+        function teste(){
+            console.log(this)
+        }
+
+        var teste2 = teste.bind('ola mundo') // passando novo 'this'
+
+        document.addEventListener('click', teste)
+
+        document.addEventListener('click', teste2)
+
+    </script>
+
+</head>
+<body>
+    <h1>Funções - this e bind()</h1>
+
+    
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+    <script>
+
+        window.addEventListener('DOMContentLoaded', function () {
+            var _p1 = document.querySelectorAll('p')
+            var _p2 = document.getElementsByTagName('p')
+
+            console.log(_p1.length, _p2.length)
+
+            var newP = document.createElement('p')
+            newP.textContent = 'novo paragrafo tá legal...'
+            document.body.appendChild(newP)
+
+            console.log(_p1.length, _p2.length)
+        })
+
+    </script>
+</head>
+
+<body>
+    <h1>Funções - Diferença entre querySelector 9estático) x getElementByTagName (vivo)</h1>
+    <p>Com o <strong> querySelector</strong> mudanças futuras no elemento não alteram o que já foi gerado anteriormente.
+    </p>
+    <p>Veja no Console.Log como o tamanho do <strong>getElementByTagName</strong> foi alterado após a inclusão do novo
+        parágrafo.</p>
+    <p>Mussum Ipsum, cacilds vidis litro abertis. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam
+        vulputate dapibus. Detraxit consequat et quo num tendi nada. Suco de cevadiss deixa as pessoas mais
+        interessantis. Cevadis im ampola pa arma uma pindureta.</p>
+    <p>Quem num gosta di mim que vai caçá sua turmis! Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie
+        leo, vitae iaculis nisl. Quem manda na minha terra sou euzis! Leite de capivaris, leite de mula manquis sem
+        cabeça.</p>
+    <p>Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Posuere libero varius. Nullam a nisl ut
+        ante blandit hendrerit. Aenean sit amet nisi. Manduma pindureta quium dia nois paga. In elementis mé pra quem é
+        amistosis quis leo.</p>
+ 
+</body>
+
+</html>

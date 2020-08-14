@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+    <script>
+
+        // module pattern
+        var beluga = {
+            number: {
+                value: 0,
+                add: function(n) {
+                    this.value += n
+                },
+                log: function(){
+                    consol.log(this.value)
+                }
+            }
+        }
+
+        //reveal pattern
+        var beluga2 = (function(){
+            var n = 0
+
+            function isNumber(_n){
+                return typeof _n === 'number'
+            }
+
+            function _add(_n){
+                if(isNumber(_n)){
+                    n += _n
+                }
+            }
+
+            function _log(){
+                console.log(n)
+            }
+
+            return {
+                add: _add,
+                log: _log
+            }
+        })()
+
+    </script>
+
+</head>
+
+<body>
+    <h1>Funções - Reveal Pattern</h1>
+    <p>Maneira de componetizar as funcionalidades da página/sistema.</p>
+    <p>Deriva do padrão <strong> "Module Pattern"</strong>.</p>
+    <p>Module Pattern - protege o escopo global criando um objeto que é responsável por armazenar as variáveis</p>
+
+</body>
+
+</html>

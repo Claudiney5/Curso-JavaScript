@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de JavaScript</title>
+</head>
+<body>
+    <main class="content">
+        
+        <h1>Saltos</h1>
+        <p>return - sai da função, retornando algo quando solicitado</p>
+        <p>break - sai de um loop, por exemplo, sem sair da função. Usado no Switch.</p>
+        <p>continue - volta para o começo do loop de onde foi colocado.</p>
+    
+    </main>
+
+    <script>
+
+        function testeSaltos() {
+            for(var i = 0; i < 10; i++){
+                console.log(i)
+                if(i == 5){
+                    return  // RETURN  sai da função
+                }
+            }
+        }
+
+        testeSaltos()
+
+    </script>
+    
+    
+</body>
+</html>

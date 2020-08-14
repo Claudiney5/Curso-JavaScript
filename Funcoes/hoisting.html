@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+</head>
+<body>
+    <h1>Funções - Hoisting</h1>
+    
+    <script>
+        var nome = "Claudiney"
+    
+        function mostraNome() {
+            console.log(nome)
+            var nome = "escopo interno"
+
+            var teste = function testeHoisting(){
+                return 'funfou'
+            }
+            console.log('-------------')
+            console.log('Teste de Hoisting:', teste())
+
+        }
+    
+        mostraNome()
+    
+    </script>
+</body>
+
+</html>

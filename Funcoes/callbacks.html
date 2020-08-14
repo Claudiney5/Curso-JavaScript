@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+</head>
+<body>
+    <h1>Funções - Callbacks</h1>
+
+    <script>
+
+        function foo(str){
+            console.log('ola', str)
+        }
+
+        function executa(cb){
+            var hoy = 'mundo'
+            if(cb && typeof cb === 'function') cb(hoy)
+        }
+
+        executa(foo)
+
+        executa(function teste(){
+            console.log('função  teste')
+        })
+
+        document.addEventListener('click', function clicou(){
+            console.log('Clicou"!!')
+        })
+
+    </script>
+    
+</body>
+</html>
