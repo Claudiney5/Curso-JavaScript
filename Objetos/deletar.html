@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <h1>Deletar Objetos</h1>
+    <p>Delete e um 'açucar sintático'.</p>
+
+    
+</body>
+
+    <script>
+
+        var nome = 'Claudiney'
+        var sobrenome = 'Martins'
+
+        // let eu = {
+        //     nome: nome
+        //     sobrenome: sobrenome
+        // }
+
+        // PODE SER ESCRITO COMO ABAIXO;
+
+        let eu = {nome, sobrenome}
+
+        console.log(eu)
+
+        var obj3 = {
+            name: 'Objeto 03',
+            valor: 10
+        }
+
+        var obj4 = Object.create(obj3)
+        obj4.apelido = 'meu novo objeto'
+        obj4.name = 'Novo obj'
+        obj4.andar = function(){
+            console.log('Andando, pero no mucho.')
+        }
+
+        console.log('Objeto 4: ', obj4)
+
+        //deletando apelido
+        delete obj4.apelido
+        console.log('Objeto 4: ', obj4)
+
+
+    </script>
+
+</html>

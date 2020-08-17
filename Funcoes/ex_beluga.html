@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+
+    <script src="beluga.js"></script>
+
+</head>
+<body>
+    <H1>Funções - Abstraindo métodos de acesso ao DOM</H1>
+
+    <p>teste <a href="#">teste 1</a> Teste </p>
+    <p>teste <a href="#">teste 2</a> Teste </p>
+    <p>teste <a href="#">teste 3</a> Teste </p>
+    <p>teste <a href="#">teste 4</a> Teste </p>
+    <p>teste <a href="#">teste 5</a> Teste </p>  
+
+    
+</body>
+
+<script>
+
+    console.log(bel.$('p'))
+    console.log(bel.$$('p'))
+    // sempre que chamar bel.$ ou $$ estaremos chamndo document.querySelector ou document.querySelectorAll
+
+</script>
+</html>

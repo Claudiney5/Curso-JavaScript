@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang=t-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Object.create()</h1>
+    <p>Revisão da maneiras de criar Objetos e <strong>Object Create</strong> </p>
+    <ul>
+        <li>maneira Literal</li>
+        <li>maneira Formal</li>
+        <li>com Função construtora de objeto</li>
+        <li>com Object Create</li>
+    </ul>
+    <p>Ver no <strong> console.log</strong></p>
+    <p>Utiliza-se object.create() para criar cópias SEPARADAS de objetos. Isto é, sem matar um deles.</p>
+
+   
+</body>
+
+<script>
+
+    var obj1 = {   // objeto construindo da forma Literal
+        name: 'Objeto 01 (literal)',
+        log: function(msg){
+            console.log(msg)
+        }
+    }
+
+    var obj2 = new Object()   // objeto construído de maneira Formal
+    obj2.name = 'Objeto 02 (formal)'
+    obj2.log = function(msg){
+        console.log(msg + ' do obj 2')
+    }
+
+    function Pessoa(nome){  // objeto construído com Função Construtora
+        this.nome = nome
+        this.falar = function(msg){
+            console.log(this.nome + ' fala ' + msg)
+            console.log(`${this.nome} está falando ${msg}`)  //Template Literals
+        }
+        this.endereco = 'rua Qualquer, 0001'
+    }
+
+    var cla = new Pessoa('Claudiney')
+
+    var lara = Object.create(cla)  // herda atributos (nome, endereco, etc)
+    // corrigindo, alterando a herança...
+    lara.nome = 'Lara'
+    console.log(lara.nome)
+
+
+</script>
+
+</html>

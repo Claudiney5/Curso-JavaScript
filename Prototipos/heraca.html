@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protótipos de funções</title>
+</head>
+<body>
+    <h1>Herança com Prototypes</h1>
+
+    
+</body>
+
+<script>
+    function Animal(tipo){
+        if(tipo) this.tipo = tipo
+    }    
+
+    Animal.prototype.obtemTipo = function(){
+        return this.tipo
+    }
+
+    Animal.prototype.tipo = 'desconhecido'
+
+    let cachorro = new Animal('mamifero')
+    let gato = new Animal('mamifero')
+    let aranha = new Animal('inseto')
+    let peixe = new Animal()
+
+    console.log(cachorro, gato, aranha, peixe)
+
+    function teste(){
+        console.log(arguments)
+        Array.prototype.forEach.call(arguments,        // pegando o método 'forEach' emprestado do construtor de Arrays
+            function(argument){
+                console.log('Argumento: ' + argument)
+            })
+    }
+
+    teste('ola', 'mundo', false, 25)
+
+
+</script>
+
+</html>

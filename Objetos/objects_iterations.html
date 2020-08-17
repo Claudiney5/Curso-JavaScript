@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Iterações Sobre Objetos</h1>
+    <p></p>
+    <ul>
+        <li>in</li>
+        <li>for ... in</li>
+        <li>hasOwnProperty()</li>
+        <li>Object.keys()</li>
+        <li>Object.values()</li>
+        <li>Object.entries()</li>
+    </ul>
+
+    <p>Conseguimos acessar os atributos com 'in' fazendo: 'nome_do_atributo' in objeto_atual. Contudo, na falta da declaração do atributo ao objeto atual,será apresentado o atributo do objeto pai.</p>
+    <p>O 'for ... in' mostrará todas as propriedades do objeto, inclusive as herdadas.</p>
+    <p>hasOwnPorperty() indica as propriedades próprias do objeto passado.</p>
+    <p>Object.keys() passa uma array das chaves do objeto passado.</p> 
+    <p>Object.values() é parecido com o Object.keys(). Porém, passa os valores </p>
+    <p>Object.entries() retorna uma array com as arrays de chaves e valores do objeto.</p>
+    
+    
+</body>
+
+<script>
+
+    var obj1 = {   // objeto construindo da forma Literal
+        name: 'Objeto 01 (literal)',
+        log: function(msg){
+            console.log(msg)
+        }
+    }
+
+    var obj2 = new Object()   // objeto construído de maneira Formal
+    obj2.name = 'Objeto 02 (formal)'
+    obj2.log = function(msg){
+        console.log(msg + ' do obj 2')
+    }
+
+    function Pessoa(nome){  // objeto construído com Função Construtora
+        this.nome = nome
+        this.falar = function(msg){
+            console.log(this.nome + ' fala ' + msg)
+            console.log(`${this.nome} está falando ${msg}`)  //Template Literals
+        }
+        this.endereco = 'rua Qualquer, 0001'
+    }
+
+    var obj3 = {
+        name: 'Objeto 03',
+        valor: 10
+    }
+
+    var obj4 = Object.create(obj3)
+    obj4.apelido = 'meu novo objeto'
+    obj4.name = 'Novo obj'
+    obj4.andar = function(){
+        console.log('Andando, pero no mucho.')
+
+    }
+
+    for(var propriedade in obj4){
+        console.log('propriedade:', propriedade)
+        console.log('valor da propr.:', obj4[propriedade])  //  valor do atributo em questão
+    }
+
+    console.log('-----------------------')
+    console.log('Verificando se a propriedade é do objeto em questão e não herdada:')
+    for(var propriedade in obj4){
+        console.log('propriedade:', propriedade)
+        console.log(obj4.hasOwnProperty(propriedade))
+    }
+
+    console.log('-----------------------')
+
+    const chaves = Object.keys(obj4)  // array com as chaves
+    console.log(chaves)
+
+    const valores = Object.values(obj4)  //  array com os valores
+    console.log(valores)
+
+    const entradas = Object.entries(obj4)
+    console.log(entradas)
+    console.log(entradas[0][0] + ': ' + entradas[0][1])  // array com arrays de chaves e valores
+    entradas[2][1]()  // executando função
+
+
+</script>
+
+</html>

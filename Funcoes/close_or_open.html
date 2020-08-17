@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Funções</title>
+</head>
+<body>
+    <h1>Funções - retorno de string diferente a cada chamada</h1>
+
+    
+</body>
+
+<script>
+
+    // encapsulamento conhecido como 'closure'
+
+    var closeOrOpen = (function(){  // função auto-invocável(será chamada no momento da atribuição)
+        var status = 'is-close'
+        return function(){
+            status = (status === 'is-close' ? 'is-open' : 'is-close')
+            return status
+        }
+    })()
+
+</script>
+</html>
